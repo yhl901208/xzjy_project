@@ -1,0 +1,100 @@
+<!doctype html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>倾诉记录</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="format-detection" content="email=no" />
+<link rel="stylesheet" href="./static/css/base.css">
+<link rel="stylesheet" href="./static/css/flex.css">
+<link rel="stylesheet/less" type="text/css" href="./static/css/app.less">
+</head>
+<body>
+<!-- 话题列表页面-->
+<div id="qingsu_list-wrap" data-role="page">
+    <div class="title">处理中记录</div>
+    <section class="list">
+        <ul>
+            <li>
+                <img src="./static/images/imgdemo/imguser.jpg" />
+                <div class="info">
+                    <div class="name">扬小青<i class="lab">解忧人s级</i></div>
+                    <div class="box">
+                        <span class="time">3月15日  15:20</span>
+                        <span class="money">￥80.8</span>
+                    </div>
+                </div>
+                <div class="type-loading">处理中</div>
+            </li>
+            <li>
+                <img src="./static/images/imgdemo/imguser.jpg" />
+                <div class="info">
+                    <div class="name">扬小青<i class="lab">解忧人s级</i></div>
+                    <div class="box">
+                        <span class="time">3月15日  15:20</span>
+                        <span class="money">￥80.8</span>
+                    </div>
+                </div>
+                <div class="type-loading">处理中</div>
+            </li>
+            
+        </ul>
+    </section>
+    <div class="title">已完成的记录</div>
+    <section class="list">
+        <ul>
+            <li>
+                <img src="./static/images/imgdemo/imguser.jpg" />
+                <div class="info">
+                    <div class="name">扬小青<i class="lab">解忧人s级</i></div>
+                    <div class="box">
+                        <span class="time">3月15日  15:20</span>
+                        <span class="money">￥80.8</span>
+                    </div>
+                </div>
+                <div class="type-ok">已完成</div>
+            </li>
+            <li>
+                <img src="./static/images/imgdemo/imguser.jpg" />
+                <div class="info">
+                    <div class="name">扬小青<i class="lab">解忧人s级</i></div>
+                    <div class="box">
+                        <span class="time">3月15日  15:20</span>
+                        <span class="money">￥80.8</span>
+                    </div>
+                </div>
+                <div class="type-ok">已完成</div>
+            </li>
+        </ul>
+    </section>
+</div>
+
+<div class="copyright">
+    <div class="logo"></div>
+    <a href="http://www.bcreat.com/App">北创奇迹技术支持</a>
+</div>
+
+
+<script src="static/plugins/jquery/jquery.min.js"></script>
+<script src="static/plugins/lazyload/jquery.lazyload.js"></script>
+<script src="static/plugins/fastclick/fastclick.js"></script>
+<script src="static/plugins/layer/layer.js"></script>
+<script src="static/js/adaptation.js"></script>
+<script src="static/plugins/less/less.min.js"></script>
+<script type="text/javascript">
+    $(function() {  
+        FastClick.attach(document.body);//解决部分手机点击事件延迟
+          //图片赖加载
+        $(".list img").lazyload({
+            effect: 'fadeIn',
+        });
+    });  
+    
+</script>
+</body>
+</html>

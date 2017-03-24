@@ -1,0 +1,220 @@
+<!doctype html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>个人中心</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="format-detection" content="email=no" />
+<link rel="stylesheet" href="./static/css/base.css">
+<link rel="stylesheet" href="./static/css/flex.css">
+<link rel="stylesheet/less" type="text/css" href="./static/css/app.less">
+</head>
+<body>
+   
+<!-- 个人中心-->
+<div id="user-wrap">
+    <section class="mod-2">
+        <header class="header" id="particles-js">
+            <a href="#" class="top-mess">
+                <i></i>
+            </a>
+            <div class="user-wrap">
+                <div class="radius" flex="main:center cross:center">
+                    <div class="inradius" flex="main:center cross:center">
+                        <img src="http://wx.qlogo.cn/mmopen/6FBkcba2dKfRtaKd3tqKzLlbxJm7csJ1G3LkdqoSCFFT9o1mevx69QNhbWQaq9icxer535oatrBMv8MibxAVP1icJhL5zfBF7AW/0">
+                    </div>
+                </div>
+                <div class="name">秋水伊人</div>
+                <div class="info">
+                    这个人很懒，什么都没留下
+                </div>
+<!--                 <a class="explain-text">使用说明</a>-->
+            </div>
+            <div class="bottom-info">
+                <ul class="clearfix">
+                    <li>
+                        <div class="num">￥100</div>
+                        <div class="text">总收入</div>
+                    </li>
+                    <li>
+                        <div class="num">￥100</div>
+                        <div class="text">余额</div>
+                    </li>
+                </ul>
+            </div>
+        </header>
+    </section>
+    <section class="u-nav">
+            <ul>
+                <li class="my-xiaoxi"><a href="#">系统通知：杨晓霞向你发起倾诉</a></li>
+            </ul>
+    </section>
+    <section class="u-nav">
+            <ul>
+                <li class="my-status"><a href="#">我的状态</a></li>
+                <li class="my-jieyou"><a href="#">我的解忧</a></li>
+                <li class="my-tixian"><a href="#">提现记录</a></li>
+            </ul>
+    </section>
+    
+</div>
+<div class="copyright">
+    <div class="logo"></div>
+    <a href="http://www.bcreat.com/App">北创奇迹技术支持</a>
+</div>
+<div style="height: 0.50rem;"></div>
+<footer>
+        <ul class="bottom-menu clearfix">
+            <li class="">
+                <a href="./index.html">
+                    <div class="img-style"></div>
+                    <div class="text">倾听</div>
+                </a>
+            </li>
+            <li class="">
+                <a href="./cart.html" class="">
+                     <div class="img-style"></div>
+                    <div class="text">话题</div>
+                </a>
+            </li>
+            <li class="">
+                <a href="./order_list.html" class="">
+                      <div class="img-style"></div>
+                    <div class="text">资讯</div>
+                </a>
+            </li>
+            <li class="active">
+                <a href="./user1.html" class="c3">
+                      <div class="img-style"></div>
+                    <div class="text">我的</div>
+                </a>
+            </li>
+        </ul>
+</footer>
+<script src="static/plugins/jquery/jquery.min.js"></script>
+<script src="static/plugins/fastclick/fastclick.js"></script>
+<script src="static/js/particles.min.js"></script>
+<script src="static/plugins/layer/layer.js"></script>
+<script src="static/js/adaptation.js"></script>
+<script src="static/plugins/less/less.min.js"></script>
+<script type="text/javascript">
+    $(function() {  
+        FastClick.attach(document.body);//解决部分手机点击事件延迟
+  particlesJS('particles-js',
+  {
+  "particles": {
+    "number": {
+      "value":15,
+      "density": {
+        "enable": true,
+        "value_area":80
+      }
+    },
+    "color": {
+      "value": "#ffffff"
+    },
+    "shape": {
+      "type": "circle",
+      "stroke": {
+        "width": 0,
+        "color": "#000000"
+      },
+      "polygon": {
+        "nb_sides": 5
+      }
+    },
+    "opacity": {
+      "value": 0.1,
+      "random": false,
+      "anim": {
+        "enable": false,
+        "speed": 1,
+        "opacity_min": 0.1,
+        "sync": false
+      }
+    },
+    "size": {
+      "value": 10,
+      "random": true,
+      "anim": {
+        "enable": false,
+        "speed": 80,
+        "size_min": 0.1,
+        "sync": false
+      }
+    },
+    "line_linked": {
+      "enable": true,
+      "distance": 100,
+      "color": "#ffffff",
+      "opacity": 0.5,
+      "width": 1
+    },
+    "move": {
+      "enable": true,
+      "speed": 1,
+      "direction": "none",
+      "random": false,
+      "straight": false,
+      "out_mode": "out",
+      "bounce": false,
+      "attract": {
+        "enable": false,
+        "rotateX": 600,
+        "rotateY": 1200
+      }
+    }
+  },
+  "interactivity": {
+    "detect_on": "canvas",
+    "events": {
+      "onhover": {
+        "enable": false,
+        "mode": "repulse"
+      },
+      "onclick": {
+        "enable": true,
+        "mode": "push"
+      },
+      "resize": true
+    },
+    "modes": {
+      "grab": {
+        "distance": 800,
+        "line_linked": {
+          "opacity": 1
+        }
+      },
+      "bubble": {
+        "distance": 800,
+        "size": 50,
+        "duration": 2,
+        "opacity": 0.8,
+        "speed": 1
+      },
+      "repulse": {
+        "distance": 400,
+        "duration": 0.4
+      },
+      "push": {
+        "particles_nb": 2
+      },
+      "remove": {
+        "particles_nb": 1
+      }
+    }
+  },
+  "retina_detect": true
+});
+
+$('canvas').css('position','absolute');
+
+});  
+</script>
+</body>
+</html>

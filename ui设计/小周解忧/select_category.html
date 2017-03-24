@@ -1,0 +1,108 @@
+<!doctype html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>小舟解忧</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="format-detection" content="email=no" />
+<link rel="stylesheet" href="./static/css/base.css">
+<link rel="stylesheet" href="./static/css/flex.css">
+<link rel="stylesheet/less" type="text/css" href="./static/css/app.less">
+<style>
+    html{
+        font-size:100px;
+    }
+</style>
+</head>
+<body>
+   
+<!-- 首页页面-->
+<div id="select_catergory-wrap" data-role="page">
+    <div class="title">选择解忧分类</div>
+    <section class="tag clearfix">
+        <a href="javascript:void(0)" class="on">爱情</a>
+        <a href="javascript:void(0)">婚姻</a>
+        <a href="javascript:void(0)">暗恋</a>
+        <a href="javascript:void(0)">友情</a>
+        <a href="javascript:void(0)">爱情</a>
+        <a href="javascript:void(0)">爱情</a>
+        <a href="javascript:void(0)">爱情</a>
+    </section>
+    <div class="title">
+        选择解忧人等级
+        <a href="#">等级说明</a>
+    </div>
+    <section class="section-group">
+        <ul class="clearfix">
+            <li flex="main:center cross:center" class="on">
+                <div class="icon-people1"></div>
+                <div class="right">
+                    <div class="name">倾听人</div>
+                    <div class="money">￥20.00</div>
+                </div>
+            </li>
+            <li flex="main:center cross:center">
+                <div class="icon-people2"></div>
+                <div class="right">
+                    <div class="name">倾听人</div>
+                    <div class="money">￥20.00</div>
+                </div>
+            </li>
+            <li flex="main:center cross:center">
+                <div class="icon-people3"></div>
+                <div class="right">
+                    <div class="name">倾听人</div>
+                    <div class="money">￥20.00</div>
+                </div>
+            </li>
+            <li flex="main:center cross:center">
+                <div class="icon-people4"></div>
+                <div class="right">
+                    <div class="name">倾听人</div>
+                    <div class="money">￥20.00</div>
+                </div>
+            </li>
+        </ul>
+    </section>
+    <section class="is_agree" flex="main:center cross:center">
+        <i class="radio-box on"></i>
+        <span>平台须知</span>
+    </section>
+    <section class="btn-wrap">
+        <a href="#">开始匹配</a>
+    </section>
+</div>
+
+<script src="static/plugins/jquery/jquery.min.js"></script>
+<script src="static/plugins/fastclick/fastclick.js"></script>
+<script src="static/plugins/layer/layer.js"></script>
+<script src="static/js/adaptation.js"></script>
+<script src="static/plugins/less/less.min.js"></script>
+<script type="text/javascript">
+    $(function() {  
+        FastClick.attach(document.body);//解决部分手机点击事件延迟
+        
+         $(".tag a").click(function(){
+            $(this).addClass("on").siblings().removeClass("on");
+        });
+        $(".section-group li").click(function(){
+            $(this).addClass("on").siblings().removeClass("on");
+        });
+        
+        $(".radio-box").click(function(){
+            if($(this).hasClass("on")){
+                $(this).removeClass('on');
+            }else{
+                $(this).addClass('on');
+            }
+        });
+       
+    });  
+</script>
+</body>
+</html>

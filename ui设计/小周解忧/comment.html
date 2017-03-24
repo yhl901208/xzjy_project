@@ -1,0 +1,79 @@
+<!doctype html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>评价页面</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="format-detection" content="email=no" />
+<link rel="stylesheet" href="./static/css/base.css">
+<link rel="stylesheet" href="./static/css/flex.css">
+<link rel="stylesheet/less" type="text/css" href="./static/css/app.less">
+<style>
+    html{
+        font-size:100px;
+    }
+    body{
+        background-color: #ffffff;
+    }
+</style>
+</head>
+<body>
+   
+<!-- 首页页面-->
+<div id="comment-wrap" data-role="page">
+    <section class="user-wrap">
+        <img src="./static/images/imgdemo/imguser.jpg" />
+        <div class="name f15">杨默默<span class="f12">（解忧人SS级）</span></div>
+        <div class="xing-wrap">
+            <span class="icon-xing selected-xing" index="1"></span>
+            <span class="icon-xing selected-xing" index="2"></span>
+            <span class="icon-xing" index="3"></span>
+            <span class="icon-xing" index="4"></span>
+            <span class="icon-xing" index="5"></span>
+            <input type="hidden" name="" id="xiang-val" value="2">
+        </div>
+    </section>
+    <section class="tag clearfix">
+        <a href="javascript:;" class="cur">服务态度好</a>
+        <a href="javascript:;">服务态度好</a>
+        <a href="javascript:;">服务态度好</a>
+        <a href="javascript:;">服务态度好</a>
+        <a href="javascript:;">服务态度好</a>
+        <a href="javascript:;">服务态度好</a>
+    </section>
+    <section class="textrea-wrap">
+        <textarea placeholder="写其他的意见和建议"></textarea>
+    </section>
+    <div class="btns-wrap">
+        <a href="#" class="btn">提交</a>
+    </div>
+    
+</div>
+<script src="static/plugins/jquery/jquery.min.js"></script>
+<script src="static/plugins/fastclick/fastclick.js"></script>
+<script src="static/plugins/layer/layer.js"></script>
+<script src="static/js/adaptation.js"></script>
+<script src="static/plugins/less/less.min.js"></script>
+<script type="text/javascript">
+    $(function() {  
+        FastClick.attach(document.body);//解决部分手机点击事件延迟
+        $(".xing-wrap .icon-xing").click(function(){
+            var num = $(this).attr('index');
+            $("#xiang-val").val(num);
+            $(this).siblings().removeClass('selected-xing');
+            $(this).addClass('selected-xing').prevAll().addClass("selected-xing");
+        });
+        
+        $(".tag a").click(function(){
+            $(this).addClass("cur").siblings().removeClass('cur');
+        });
+        
+    });  
+</script>
+</body>
+</html>

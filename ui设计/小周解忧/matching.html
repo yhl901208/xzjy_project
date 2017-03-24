@@ -1,0 +1,169 @@
+<!doctype html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>小舟解忧</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="format-detection" content="email=no" />
+<link rel="stylesheet" href="./static/css/base.css">
+<link rel="stylesheet" href="./static/css/flex.css">
+<link rel="stylesheet/less" type="text/css" href="./static/css/app.less">
+<style>
+    html{
+        font-size:100px;
+    }
+</style>
+</head>
+<body>
+   
+<!-- 首页页面-->
+<div id="matching-wrap" data-role="page">
+    
+    <!--    匹配中页面    -->
+    <section class="matching-loading" style="display:block;">
+        <div class="text">正在匹配中，请耐心等待...</div>
+        <div class="animation">
+             
+            <div class="game_time">
+                <div class="circleProgress_wrapper">
+                    <div class="wrapper right">
+                        <div class="circleProgress rightcircle"></div>
+                    </div>
+                    <div class="wrapper left">
+                        <div class="circleProgress leftcircle"></div>
+                    </div>
+                    <div class="count-num" flex="main:center cross:center dir:top">
+                        <div class="text-name">已通知</div>
+                        <div class="time">32</div>
+                        <div class="text-name">位解忧人</div>
+                    </div>
+                </div>
+              
+            </div>
+
+        </div>
+        <div class="btns-wrap">
+            <a href="#" class="btn btn-white">取消</a>
+        </div>
+    </section>
+    
+    
+    <!--    匹配成功页面    -->
+    <section class="matching-ok" style="display:none">
+        <div class="text">小舟解忧为您匹配成功</div>
+        <div class="teacher-container">
+            <img src="./static/images/imgdemo/imguser.jpg"/>
+            <div class="name">杨默默（解忧人SS级）</div>
+            <div class="xing-wrap">
+                <div class="xing-active" style="width: 80%;"></div>
+            </div>
+            <div class="desc">国际二级心理咨询师，高级培训师</div>
+            <div class="count">
+                1222人倾诉，12248人收藏
+            </div>
+        </div>
+        <div class="btns-wrap">
+            <a href="#" class="btn btn-green" id="pay">支付30元倾诉</a>
+            <a href="#" class="btn btn-white">重新匹配</a>
+        </div>
+    </section>
+    
+    <!--    匹配返回结果页面    -->
+    <section class="matching-result" style="display:none">
+        <div class="text">小舟解忧为您匹配成功</div>
+        <div class="teacher-container">
+            <img src="./static/images/imgdemo/imguser.jpg"/>
+            <div class="name">风雨过后的彩虹</div>
+            
+        </div>
+        <div class="btns-wrap">
+            <a href="#" class="btn btn-green">接受倾诉</a>
+            <a href="#" class="btn btn-white">放弃</a>
+        </div>
+    </section>
+    
+    
+     <!--    匹配失败页面    -->
+     <section class="matching-no" style="display:none;">
+        <div class="text">很抱歉，匹配失败，请重新匹配</div>
+        <div class="loading-pic"></div>
+        <div class="btns-wrap">
+            <a href="#" class="btn">重新匹配</a>
+        </div>
+        
+    </section>
+    
+    
+    
+</div>
+
+
+
+
+
+
+<!--付款弹出层-->
+<section class="actionsheet">
+    <div class="weui-mask" id="iosMask"></div>
+    <div class="weui-actionsheet" id="iosActionsheet">
+        <div class="header">
+            <a class="icon-close"></a>
+            <div class="title">付款详情</div>
+            <a class="icon-wenti"></a>
+        </div>
+        <div class="content">
+            <ul>
+                <li class="clearfix">
+                    <span class="fl f14 c9">付款方式</span>
+                    <span class="fr f14 c6">微信支付</span>
+                </li>
+                <li>
+                    <span class="fl f14 c3">需付款</span>
+                    <span class="fr f14" style="color:#ff7452">￥30.00</span>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <a href="#" class="btn">确定支付</a>
+        </div>
+    </div>
+</section>
+
+
+<script src="static/plugins/jquery/jquery.min.js"></script>
+<script src="static/plugins/fastclick/fastclick.js"></script>
+<script src="static/plugins/layer/layer.js"></script>
+<script src="static/js/adaptation.js"></script>
+<script src="static/js/matching.js"></script>
+<script src="static/plugins/less/less.min.js"></script>
+<script type="text/javascript">
+    $(function() {  
+        FastClick.attach(document.body);//解决部分手机点击事件延迟
+        
+        
+        countDown();
+
+         //打开支付弹出层   
+        $("#pay").click(function(){
+            $("#iosActionsheet").addClass('weui-actionsheet_toggle');
+            $(".weui-mask").show();
+            $(".weui-mask").css("opacity","1");
+        });
+        
+        //关闭支付弹出层
+        $(".header .icon-close").click(function(){
+             $("#iosActionsheet").removeClass('weui-actionsheet_toggle');
+             $(".weui-mask").css("opacity","0");
+             $(".weui-mask").hide();
+             
+        });     
+        
+    });  
+</script>
+</body>
+</html>

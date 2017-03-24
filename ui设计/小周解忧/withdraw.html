@@ -1,0 +1,64 @@
+<!doctype html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>提现记录</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="format-detection" content="email=no" />
+<link rel="stylesheet" href="./static/css/base.css">
+<link rel="stylesheet" href="./static/css/flex.css">
+<link rel="stylesheet/less" type="text/css" href="./static/css/app.less">
+</head>
+<body>
+   <div id="worker_withdraw-wrap">
+     <header class="touch-header">
+        <a href="javascript:history.go(-1)" class="header-back"></a>
+        <div class="header-title">提现申请</div>
+        <a href="#" class="header-list">明细</a>
+    </header>
+    <section class="user-account">
+        <div class="info">
+            <div class="monney tc">25.05元</div>
+            <div class="text tc c6">可提现金额</div>
+        </div>
+    </section>
+    <section class="form-list">
+        <div class="select-ka">
+            <a href="#">微信打款信息</a>
+            <i class="icon-right"></i>
+        </div>
+        <div class="item">
+            <label class="c3 f12">真实姓名</label>
+            <input name="name" class="" placeholder="输入真实姓名" type="text" id="name">
+        </div>
+        <div class="item">
+            <label class="c3 f12">真实电话</label>
+            <input name="money" class="" placeholder="请输入真实电话" type="tel" id="tel">
+        </div>
+        <div class="item">
+            <label class="c3 f12">提现金额</label>
+            <input name="money" class="" placeholder="请输入提现金额" type="text" id="num" onkeyup="this.value=this.value.replace(/[^0-9]/g,'')" onpaste="this.value=this.value.replace(/[^0-9]/g,'')" oncontextmenu="this.value=this.value.replace(/[^0-9]/g,'')">
+        </div>
+    </section>
+    <div class="btn-wrap tc">
+        <button class="btn-submit f14 f-ffffff">提交</button>
+    </div>
+</div>
+        
+    
+<div class="copyright">
+    <div class="logo"></div>
+    <a href="http://www.bcreat.com/App">北创奇迹技术支持</a>
+</div>
+<script src="static/plugins/jquery/jquery.min.js"></script>
+<script src="static/plugins/fastclick/fastclick.js"></script>
+<script src="static/plugins/layer/layer.js"></script>
+<script src="static/js/adaptation.js"></script>
+<script src="static/plugins/less/less.min.js"></script>
+</body>
+</html>
