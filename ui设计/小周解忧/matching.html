@@ -30,20 +30,17 @@
         <div class="animation">
              
             <div class="game_time">
-                <div class="circleProgress_wrapper">
-                    <div class="wrapper right">
-                        <div class="circleProgress rightcircle"></div>
-                    </div>
-                    <div class="wrapper left">
-                        <div class="circleProgress leftcircle"></div>
-                    </div>
+                <div class="example-1">
+                    
                     <div class="count-num" flex="main:center cross:center dir:top">
                         <div class="text-name">已通知</div>
                         <div class="time">32</div>
                         <div class="text-name">位解忧人</div>
                     </div>
+                    <i class="yuan"></i>
                 </div>
-              
+                    
+                   
             </div>
 
         </div>
@@ -139,15 +136,16 @@
 <script src="static/plugins/fastclick/fastclick.js"></script>
 <script src="static/plugins/layer/layer.js"></script>
 <script src="static/js/adaptation.js"></script>
-<script src="static/js/matching.js"></script>
 <script src="static/plugins/less/less.min.js"></script>
 <script type="text/javascript">
     $(function() {  
         FastClick.attach(document.body);//解决部分手机点击事件延迟
         
+        //动画关闭 $(".example-1 .yuan").css({"animationIterationCount":"0","top":"10%"});
+       //动画开始  
+       $(".example-1 .yuan").css({"animationIterationCount":"infinite","top":"50%"});
         
-        countDown();
-
+        
          //打开支付弹出层   
         $("#pay").click(function(){
             $("#iosActionsheet").addClass('weui-actionsheet_toggle');

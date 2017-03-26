@@ -1,0 +1,277 @@
+<!doctype html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>小舟解忧</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="format-detection" content="email=no" />
+<link rel="stylesheet" href="./static/css/base.css">
+<link rel="stylesheet" href="./static/css/flex.css">
+<link rel="stylesheet/less" type="text/css" href="./static/css/app.less">
+<style>
+    html{
+        font-size:100px;
+    }
+</style>
+</head>
+<body>
+   
+<!-- 首页页面-->
+<div id="chat-wrap" data-role="page">
+    
+    <div id="showDiv" class="countDown" flex="main:center cross:center">
+        <i class="icon-time"></i>
+        <div style='margin-left:0.05rem;'>
+            <span id="day_show"></span>
+            <span id="hour_show"></span>
+            <span id="minute_show"></span>
+            <span id="second_show"></span>
+        </div>
+        
+    </div>
+    
+    <div class="saying" style="display: none;">
+	<img src="./static/images/chat/saying.gif">
+    </div>
+    
+    
+<!--    对话样式-->
+    <div class="speak_window">
+        <div class="speak_box">
+            <div class="answer">
+                <div class="heard_img fl"><img src="./static/images/imgdemo/imguser.jpg"></div>
+                <div class="answer_text">
+                    <p>Hey，您的专属导游在此！您可以向我提问哦！有时微信会跟我闹点小脾气，试试关闭当前页面重新进入就ok啦!</p>
+                    <i></i>
+                </div>
+            </div>
+            <div class="question">
+                <div class="heard_img fr">
+                    <img src="./static/images/imgdemo/imguser.jpg"></div>
+                <div class="question_text clear"><p>不好意思，我听不清！</p><i></i></div>
+            </div>
+            <div class="answer">
+                <div class="heard_img fl">
+                    <img src="./static/images/imgdemo/imguser.jpg">
+                </div>
+                <div class="answer_text"><p>我不知道你在说什么?</p><i></i></div>
+            </div>
+        </div>
+    </div>
+    
+    
+   
+    
+    
+    <div class="wenwen-footer"> 
+        <div class="input-wrap clearfix">
+            
+            <div class="wenwen_btn fl" onclick="to_write()" flex="main:left cross:center">
+                <img src="./static/images/chat/icon-push.png">
+            </div>
+            
+            <div class="wenwen_text fl" flex="main:left cross:center">
+                <div class="write_box" style="display: block;">
+                   <article id="form_article" contenteditable="true" onkeydown="myInput.listen(this, event);"></article>
+                </div>
+
+                <div class="circle-button" id="wenwen" style="color: rgb(102, 102, 102); display: none;">
+                    按住 说话
+                </div>
+            </div>
+            <div class="wenwen_biaoqing fl" flex="main:right cross:center" onclick="to_biaoqing()">
+                <img src="./static/images/chat/icon-bq.png">
+            </div>
+            <div class="wenwen_add fr" flex="main:right cross:center" onclick="to_pic()">
+                <img src="./static/images/chat/icon-add.png" style="display:block;">
+                <a href="#" class="fs" style="display:none;">发送</a>
+            </div>
+        </div>
+        
+        <div class="page_emotion box_swipe" id="page_emotion" style="display:block;height: 0px;">
+                <dl id="list_emotion" class="list_emotion pt_10"></dl><!-- 表情框 -->
+                <dt><ol id="nav_emotion" class="nav_emotion"></ol></dt><!-- 分页提示点 -->
+        </div>
+
+        <div class="pic-wrap" style="display: none">
+            <img src="./static/images/chat/icon-pic.png" />
+        </div>
+        
+    </div>
+    
+<a class="end-radius">结束</a>
+   
+    
+</div>
+
+<script src="static/plugins/jquery/jquery.min.js"></script>
+<script src="static/plugins/fastclick/fastclick.js"></script>
+<script src="static/plugins/layer/layer.js"></script>
+<script src="static/js/adaptation.js"></script>
+<script src="static/plugins/less/less.min.js"></script>
+<script src="static/js/chat.js"></script>
+<script type="text/javascript">
+    $(function() {  
+        FastClick.attach(document.body);//解决部分手机点击事件延迟
+    });  
+    
+    function to_write(){
+      $('.wenwen_btn img').attr('src','./static/images/chat/icon-keyboard.png');
+      $('.wenwen_btn').attr('onclick','to_say()');
+      $('.write_box').hide();
+      $('.circle-button').show().addClass('cur');
+      $('.write_box #form_article').focus();
+       $(".pic-wrap").hide();
+       if($(".page_emotion").hasClass("on")){
+            $('.wenwen_biaoqing img').attr('src','./static/images/chat/icon-bq.png');
+            $(".page_emotion,.pic-wrap").hide();
+            $('.wenwen_biaoqing').attr('onclick','to_biaoqing()');
+            $(".page_emotion").removeClass("on");
+      }
+      
+      //for_bottom();
+  }
+
+  function to_say(){
+      $('.write_list').remove();
+      $('.write_box #form_article').val('');
+      $('.wenwen_btn img').attr('src','./static/images/chat/icon-push.png');
+      $('.wenwen_btn').attr('onclick','to_write()');
+      $('.write_box').show();
+      $('.circle-button').hide().removeClass('cur');
+     
+      
+  }
+  
+  
+  function to_biaoqing(){
+      $(".wenwen_biaoqing img").attr('src','./static/images/chat/icon-keyboard.png');
+      $(".page_emotion,.pic-wrap").hide();
+      $(".page_emotion").show().css("height","140px");
+      $('.wenwen_biaoqing').attr('onclick','to_jp()');
+      $(".page_emotion").addClass("on");
+      if($(".circle-button").hasClass("cur")){
+           $('.circle-button').hide().removeClass('cur');
+           $('.write_box #form_article').val('');
+            $('.wenwen_btn img').attr('src','./static/images/chat/icon-push.png');
+            $('.wenwen_btn').attr('onclick','to_write()');
+            $('.write_box').show();
+        }
+      
+  }
+  
+  function to_jp(){
+      
+      $(".wenwen_biaoqing img").attr('src','./static/images/chat/icon-bq.png');
+      $(".page_emotion,.pic-wrap").hide().css("height","0px");
+      $(".page_emotion").show();
+      $('.wenwen_biaoqing').attr('onclick','to_biaoqing()');
+      $(".page_emotion").removeClass("on");
+     
+
+  }
+  
+  function to_pic(){
+      
+      $(".page_emotion,.pic-wrap").hide().css("height","0px");
+      $(".pic-wrap").show().css("height","auto");
+      if($(".circle-button").hasClass("cur")){
+           $('.circle-button').hide().removeClass('cur');
+           $('.write_box #form_article').val('');
+            $('.wenwen_btn img').attr('src','./static/images/chat/icon-push.png');
+            $('.wenwen_btn').attr('onclick','to_write()');
+            $('.write_box').show();
+       }
+  }
+  
+    //按住说话
+    var wen  = document.getElementById('wenwen');
+    function _touch_start(event){
+        event.preventDefault();
+        $('.wenwen_text .circle-button').css('background','#c1c1c1');
+        $('.wenwen_text .circle-button').css('color','#fff');
+        $('.saying').show();
+    }
+
+    function _touch_end(event){
+        event.preventDefault();
+        $('.wenwen_text .circle-button').css('background','#fff');
+        $('.wenwen_text .circle-button').css('color','#666');    
+        $('.saying').hide();
+        var str  = '<div class="question">';
+	        str += '<div class="heard_img fr"><img src="./static/images/imgdemo/imguser.jpg"/></div>';
+	        str += '<div class="question_text clear"><p>不好意思，我听不清！</p><i></i>';
+	        str += '</div></div>';
+		$('.speak_box').append(str);
+		for_bottom();
+        setTimeout(function(){
+        	var ans  = '<div class="answer"><div class="heard_img fl"><img src="./static/images/imgdemo/imguser.jpg"/></div>';
+	        	ans += '<div class="answer_text"><p>我不知道你在说什么?</p><i></i>';
+	    		ans += '</div></div>';
+	    	$('.speak_box').append(ans);
+			for_bottom();
+        },1000);       
+    }
+
+    wen.addEventListener("touchstart", _touch_start, false);
+    wen.addEventListener("touchend", _touch_end, false);
+    function for_bottom(){
+            var speak_height = $('.speak_box').height();
+            $('.speak_box,.speak_window').animate({scrollTop:speak_height},500);
+    }
+    
+    
+    //监听输入框变化
+    function notifyme() { 
+        if($('#form_article').html() == ""){
+            $(".wenwen_add .fs").hide();
+            $(".wenwen_add img").show();
+        }else{
+            $(".wenwen_add .fs").show();
+            $(".wenwen_add img").hide();
+        }
+    }
+    setInterval(function() {
+            notifyme(); 
+    }, 1000);
+    
+    
+//倒计时
+var intDiff = parseInt(20); //倒计时总秒数量
+function timer(intDiff) {
+  var timer = setInterval(function () {
+    var day = 0,
+      hour = 0,
+      minute = 0,
+      second = 0; //时间默认值
+    if (intDiff > 0) {
+      day = Math.floor(intDiff / (60 * 60 * 24));
+      hour = Math.floor(intDiff / (60 * 60)) - (day * 24);
+      minute = Math.floor(intDiff / 60) - (day * 24 * 60) - (hour * 60);
+      second = Math.floor(intDiff) - (day * 24 * 60 * 60) - (hour * 60 * 60) - (minute * 60);
+    }else if(intDiff == 0){ //倒计时结束
+        
+        clearInterval(timer);
+                
+    }
+    if (minute <= 9) minute = '0' + minute;
+    if (second <= 9) second = '0' + second;
+    $('#day_show').html(day + "天");
+    $('#hour_show').html('<s id="h"></s>' + hour + '时');
+    $('#minute_show').html('<s></s>' + minute + '分');
+    $('#second_show').html('<s></s>' + second + '秒');
+    intDiff--;
+  }, 1000);
+}
+$(function () {
+  timer(intDiff);
+});
+   
+</script>
+</body>
+</html>

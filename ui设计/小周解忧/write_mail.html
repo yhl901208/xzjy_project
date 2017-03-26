@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>发布</title>
+<title>写信</title>
 <meta name="description" content="">
 <meta name="keywords" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -26,37 +26,38 @@
 <body>
     
 <!-- 首页页面-->
-<div id="publish-wrap" data-role="page">
+<div id="write_mail-wrap" data-role="page">
+    <section class="nav">
+        <ul class="clearfix">
+            <li class="cur">
+                <a href="#">写给他人</a>
+            </li>
+            <li>
+                <a href="#">写给平台</a>
+            </li>
+         
+        </ul>
+    </section>
     <section class="group">
-        <div class="select-wrap">
-            <input type="text" name="class" placeholder="请选择话题分类" readonly="readonly" id="fenlei"/>
+        <div class="input-wrap">
+            <label>收信人：</label>
+            <input type="text" name="name" placeholder=""/>
         </div>
         <div class="input-wrap">
-            <input type="text" name="title" placeholder="标题" style="font-weight:bold;"/>
+            <label>邮箱地址：</label>
+            <input type="text" name="tel" placeholder=""/>
         </div>
-         <div class="text-wrap">
+        <div class="input-wrap">
+            <label>主题：</label>
+            <input type="text" name="tel" placeholder=""/>
+        </div>
+        <div class="text-wrap">
              <textarea placeholder="请输入内容"></textarea>
         </div>
     </section>
-    <section class="images clearfix">
-         <div class="item picture"> 
-                    <div class="img"> 
-                            <img src="http://cms-bucket.nosdn.127.net/catchpic/2/27/2789fcefd7abef9dad1dede128347018.jpg?imageView&thumbnail=550x0" /> 
-                            <a class="del"></a> 
-                            <input type="hidden" name="image[]" value="'+response.url+'" /> 
-                    </div> 
-       </div>
-        <div class="item picture"> 
-                    <div class="img"> 
-                            <img src="http://cms-bucket.nosdn.127.net/catchpic/2/27/2789fcefd7abef9dad1dede128347018.jpg?imageView&thumbnail=550x0" /> 
-                            <a class="del"></a> 
-                            <input type="hidden" name="image[]" value="'+response.url+'" /> 
-                    </div> 
-       </div>
-    </section>
+    
 </div>
 <div class="bottom-push">
-    <i class="pic upload"></i>
     <a href="#" class="active">发布</a>
 </div>
 <script src="static/plugins/jquery/jquery.min.js"></script>
@@ -69,66 +70,8 @@
 <script type="text/javascript">
     $(function() {  
         FastClick.attach(document.body);//解决部分手机点击事件延迟
-        var data = [{
-                    value: '1',
-                    text: '董事长'
-                    }, {
-                    value: '2',
-                    text: '总经理'
-                    }, {
-                    value: '3',
-                    text: '罗辑'
-                    }, {
-                    value: '4',
-                    text: '云天明'
-                    }];
-        var picker = new Picker({data: [data]});
-        picker.on('picker.select', function (selectedVal, selectedIndex) {
-                $('#fenlei').text(data[selectedIndex[0]].text);
-                $('input[name=class]').val(data[selectedIndex[0]].value);
-        });
-        $('#fenlei').click(function(){
-                picker.show();
-        });
-        
-        //图片上传
-    var uploader = WebUploader.create({
-            // 文件接收服务端。
-            server: "/wechat/upload/index.html",
-            // 内部根据当前运行是创建，可能是input元素，也可能是flash.
-            pick: '.upload',
-            // 不压缩image, 默认如果是jpeg，文件上传前会压缩一把再上传！
-            resize: false,
-            // 开启自动上传
-            auto  :true,
-    });
-    //文件上传进度
-    uploader.on( 'uploadProgress', function( file, percentage ) {
-
-    });
-
-    //文件上传成功
-    uploader.on( 'uploadSuccess', function( file,response ) {
-            console.log(response);
-            var tpl = '<div class="item picture"> \
-                                            <div class="img"> \
-                                                    <img src="'+response.url+'" /> \
-                                                    <a class="del"></a> \
-                                                    <input type="hidden" name="image[]" value="'+response.url+'" /> \
-                                            </div> \
-                               </div>';
-            $('#images').append(tpl);
-            $('.images .item a.del').each(function(){
-                $(this).click(function(){
-                        $(this).parent().parent().remove();
-
-                });
-            });		
-    });
-
-
-        
-        
+       
+    
         
         
     });  

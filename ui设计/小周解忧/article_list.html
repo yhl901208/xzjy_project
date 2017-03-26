@@ -1,0 +1,149 @@
+<!doctype html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>资讯</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="format-detection" content="email=no" />
+<link rel="stylesheet" href="./static/css/base.css">
+<link rel="stylesheet" href="./static/css/flex.css">
+<link rel="stylesheet" href="./static/plugins/swiper/swiper.min.css">
+<link rel="stylesheet/less" type="text/css" href="./static/css/app.less">
+<style>
+    .swiper-slide img{
+        width: 100%;
+        vertical-align: middle;
+    }
+</style>
+</head>
+<body>
+   
+<!-- 话题详情页面-->
+<div id="article_list-wrap" data-role="page">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="./static/images/article/banner.jpg" />
+            </div>
+             <div class="swiper-slide">
+                <img src="./static/images/article/banner.jpg" />
+            </div>
+             <div class="swiper-slide">
+                <img src="./static/images/article/banner.jpg" />
+            </div>
+            <div class="swiper-slide">
+                <img src="./static/images/article/banner.jpg" />
+            </div>
+          
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+    <section class="nav">
+        <ul class="clearfix">
+            <li class="cur">
+                <a href="#">分类一</a>
+            </li>
+            <li>
+                <a href="#">分类二</a>
+            </li>
+            <li>
+                <a href="#">分类三</a>
+            </li>
+        </ul>
+    </section>
+    <section class="list">
+        <ul>
+            <li>
+                <img src="./static/images/imgdemo/imguser.jpg" />
+                <div class="right">
+                    <div class="title">发大水发方式的发撒发撒发放答复萨芬打发打发负反馈？怕</div>
+                    <div class="count clearfix">
+                        <span class="fl">生活 11小时前</span>
+                        <span class="fr">赞 11 评论 113</span>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <img src="./static/images/imgdemo/imguser.jpg" />
+                <div class="right">
+                    <div class="title">发大水发方式的发撒发撒发放？怕</div>
+                    <div class="count clearfix">
+                        <span class="fl">生活 11小时前</span>
+                        <span class="fr">赞 11 评论 113</span>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <img src="./static/images/imgdemo/imguser.jpg" />
+                <div class="right">
+                    <div class="title">发大水发方式的发撒发撒发放？怕</div>
+                    <div class="count clearfix">
+                        <span class="fl">生活 11小时前</span>
+                        <span class="fr">赞 11 评论 113</span>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </section>
+    <a href="#" class="bottom-mail"></a>
+</div>
+<div class="copyright">
+    <div class="logo"></div>
+    <a href="http://www.bcreat.com/App">北创奇迹技术支持</a>
+</div>
+<div style="height: 0.50rem;"></div>
+<footer>
+        <ul class="bottom-menu clearfix">
+            <li class="">
+                <a href="./index.html">
+                    <div class="img-style"></div>
+                    <div class="text">倾听</div>
+                </a>
+            </li>
+            <li class="">
+                <a href="./cart.html" class="">
+                     <div class="img-style"></div>
+                    <div class="text">话题</div>
+                </a>
+            </li>
+            <li class="active">
+                <a href="./order_list.html" class="">
+                      <div class="img-style"></div>
+                    <div class="text">资讯</div>
+                </a>
+            </li>
+            <li class="">
+                <a href="./user1.html" class="c3">
+                      <div class="img-style"></div>
+                    <div class="text">我的</div>
+                </a>
+            </li>
+            
+        </ul>
+</footer>
+<script src="static/plugins/jquery/jquery.min.js"></script>
+<script src="static/plugins/fastclick/fastclick.js"></script>
+<script src="static/plugins/layer/layer.js"></script>
+<script src="static/plugins/swiper/swiper.min.js"></script>
+<script src="static/js/adaptation.js"></script>
+<script src="static/plugins/less/less.min.js"></script>
+<script type="text/javascript">
+    $(function() {  
+        FastClick.attach(document.body);//解决部分手机点击事件延迟
+       
+    });  
+</script>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true
+    });
+</script>
+</body>
+</html>
