@@ -1,0 +1,87 @@
+<!doctype html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>微官网</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="format-detection" content="email=no" />
+<link rel="stylesheet" href="./static/css/base.css">
+<link rel="stylesheet" href="./static/css/flex.css">
+<link rel="stylesheet/less" type="text/css" href="./static/css/app.less">
+<style>
+    body{
+        background-color: #ebeff1;
+    }
+</style>
+</head>
+<body>
+   
+<div id="home-wrap" data-role="page">
+    <div class="banner">
+        <img src="./static/images/home/banner.png" />
+    </div>
+    <div class="title">贝动教育微官网商城</div>
+    <div class="group">
+        <ul class="clearfix">
+            <li>
+                <a href="#">
+                    <img src="./static/images/home/icon-jianjie.png" />
+                    <div class="text">公司介绍</div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./static/images/home/icon-huodong.png" />
+                    <div class="text">最新活动</div>
+                </a>
+            </li>
+             <li>
+                <a href="#">
+                    <img src="./static/images/home/icon-kecheng.png" />
+                    <div class="text">最新课程</div>
+                </a>
+            </li>
+             <li>
+                <a href="#">
+                    <img src="./static/images/home/icon-new.png" />
+                    <div class="text">公司新闻</div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./static/images/home/icon-case.png" />
+                    <div class="text">经典案例</div>
+                </a>
+            </li>
+             <li>
+                <a href="#">
+                    <img src="./static/images/home/icon-tel.png" />
+                    <div class="text">联系我们</div>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<script src="static/plugins/jquery/jquery.min.js"></script>
+<script src="static/plugins/fastclick/fastclick.js"></script>
+<script src="static/js/adaptation.js"></script>
+<script src="static/plugins/less/less.min.js"></script>
+<script type="text/javascript">
+    $(function() {  
+        FastClick.attach(document.body);  
+        $("#list li").click(function(){
+            if($(this).hasClass("active")){
+                $(this).removeClass("active");
+            }else{
+                $(this).addClass("active");
+            }
+        });
+    });  
+</script>
+</body>
+</html>
